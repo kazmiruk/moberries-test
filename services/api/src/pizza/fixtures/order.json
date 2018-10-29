@@ -1,0 +1,26 @@
+[
+  {
+    "model": "pizza.Order",
+    "pk": 1,
+    "fields": {
+      "customer_id": 1,
+      "customer_address_id": 1,
+      "pizza_id": 1,
+      "size": 50,
+      "ctime": "2018-10-29T02:31:21.401295",
+      "mtime": "2018-10-29T02:31:21.401295"
+    }
+  },
+  {
+    "model": "pizza.Order",
+    "pk": 2,
+    "fields": {
+      "customer_id": 1,
+      "customer_address_id": 2,
+      "pizza_id": 3,
+      "size": 30,
+      "ctime": "2018-10-29T02:31:21.401295",
+      "mtime": "2018-10-29T02:31:21.401295"
+    }
+  }
+]

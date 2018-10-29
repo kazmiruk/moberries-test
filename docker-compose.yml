@@ -1,0 +1,62 @@
+version: '3.1'
+services:
+  db:
+    container_name: db
+    image: postgres:11.0-alpine
+    restart: always
+    env_file:
+     - env/local.env
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    logging:
+      options:
+        max-size: 100m
+  start:
+    container_name: app-api
+    build: ./services/api/
+    restart: always
+    command: /bin/sh -c "echo 'Waiting db connection...'; while ! nc -z db 5432; do sleep 1; done; echo 'Run'; python3 manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    env_file:
+     - ./env/local.env
+    volumes:
+      - ./services/api/src:/var/www
+      - ./data/api:/tmp/api
+    depends_on:
+      - db
+    links:
+      - db
+    logging:
+      options:
+        max-size: 100m
+  init:
+    container_name: app-init
+    build: ./services/api/
+    command: /bin/sh -c "echo 'Waiting db connection...'; while ! nc -z db 5432; do sleep 1; done; python3 manage.py migrate; python3 manage.py loaddata pizza customer customer_address order"
+    env_file:
+     - ./env/local.env
+    volumes:
+      - ./services/api/src:/var/www
+    depends_on:
+      - db
+    links:
+      - db
+    logging:
+      options:
+        max-size: 100m
+  run_tests:
+    container_name: app-test
+    build: ./services/api/
+    command: /bin/sh -c "echo 'Waiting db connection...'; while ! nc -z db 5432; do sleep 1; done; coverage run --source='.' manage.py test; coverage report -m"
+    env_file:
+     - ./env/local.env
+    volumes:
+      - ./services/api/src:/var/www
+    depends_on:
+      - db
+    links:
+      - db
+    logging:
+      options:
+        max-size: 100m

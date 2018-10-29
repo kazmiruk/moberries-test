@@ -1,0 +1,12 @@
+[
+  {
+    "model": "pizza.Customer",
+    "pk": 1,
+    "fields": {
+      "first_name": "Evgenii",
+      "last_name": "Kazmiruk",
+      "ctime": "2018-10-29T02:31:21.401295",
+      "mtime": "2018-10-29T02:31:21.401295"
+    }
+  }
+]

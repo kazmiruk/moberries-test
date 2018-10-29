@@ -1,0 +1,29 @@
+[
+  {
+    "model": "pizza.Pizza",
+    "pk": 1,
+    "fields": {
+      "name": "Napoletana",
+      "ctime": "2018-10-29T02:31:21.401295",
+      "mtime": "2018-10-29T02:31:21.401295"
+    }
+  },
+  {
+    "model": "pizza.Pizza",
+    "pk": 2,
+    "fields": {
+      "name": "Capricciosa",
+      "ctime": "2018-10-29T02:31:21.401295",
+      "mtime": "2018-10-29T02:31:21.401295"
+    }
+  },
+  {
+    "model": "pizza.Pizza",
+    "pk": 3,
+    "fields": {
+      "name": "Alla marinara",
+      "ctime": "2018-10-29T02:31:21.401295",
+      "mtime": "2018-10-29T02:31:21.401295"
+    }
+  }
+]

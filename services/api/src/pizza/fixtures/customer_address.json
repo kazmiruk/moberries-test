@@ -1,0 +1,22 @@
+[
+  {
+    "model": "pizza.CustomerAddress",
+    "pk": 1,
+    "fields": {
+      "customer_id": 1,
+      "address": "Borisova 30 - 16",
+      "ctime": "2018-10-29T02:31:21.401295",
+      "mtime": "2018-10-29T02:31:21.401295"
+    }
+  },
+  {
+    "model": "pizza.CustomerAddress",
+    "pk": 2,
+    "fields": {
+      "customer_id": 1,
+      "address": "Yastinskaya 7 - 102",
+      "ctime": "2018-10-29T02:31:21.401295",
+      "mtime": "2018-10-29T02:31:21.401295"
+    }
+  }
+]
